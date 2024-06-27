@@ -14,7 +14,7 @@
  * 
  * It takes three arguments, the height of the object, the terminal velocity of the object and the weight of the object.
  * The software will then calculate the time it takes for the object to fall to the ground.
- * Then It's going to save the data to a CSV file.
+ * Then It's going to save the data to a CSV file. That's about it.
 */
 using namespace std;
 
