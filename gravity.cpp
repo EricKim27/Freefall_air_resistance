@@ -1,8 +1,5 @@
 #include <iostream>
-#include <vector>
 #include <string>
-#include <math.h>
-#include <unistd.h>
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
@@ -20,8 +17,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    if(argc < 4)
-    {
+    if(argc < 4) {
         cout << "Syntax error!" << endl;
         cout << "Usage: gravity <height> <terminal_velocity> <weight>" << endl;
         return 1;
@@ -37,19 +33,17 @@ int main(int argc, char *argv[])
     std::ostringstream filename;
     filename << "Fall_" << height << "m.csv";
     std::ofstream file(filename.str());
-    if(file.is_open())
-    {
+    if(file.is_open()) {
         file << "Time, Height, Velocity" << endl;
-        for(int i = 0; i < object->time_log.size(); i++)
-        {
+        for(int i = 0; i < object->time_log.size(); i++) {
             file << object->time_log[i] << ", " << object->height_log[i] << ", " << object->velocity_log[i] << endl;
         }
         file.close();
-    } else 
-    {
+    } else {
         cout << "Error: Unable to open file" << endl;
         return 2;
     }
+
     cout << "Data saved to Fall_" << height << "m.csv" << endl;
     delete object;
     return 0;

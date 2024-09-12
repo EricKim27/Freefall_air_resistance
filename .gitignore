@@ -1,3 +1,5 @@
-/.vscode
-/*.csv
-/gravity
+/.vscode/*
+*.csv
+/.idea/*
+gravity
+/build/*
