@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
     object->set_data(height, weight, terminal_velocity);
     object->calculate();
     cout << "it took " << object->get_time() << " seconds to fall" << endl;
-    Graphics *graphics = new Graphics(object->height_log, object->velocity_log, object->time_log);
     std::ostringstream filename;
     filename << "Fall_" << height << "m.csv";
     std::ofstream file(filename.str());
@@ -44,9 +43,7 @@ int main(int argc, char *argv[])
         cout << "Error: Unable to open file" << endl;
         return 2;
     }
-    graphics->draw_sim();
     cout << "Data saved to Fall_" << height << "m.csv" << endl;
     delete object;
-    delete graphics;
     return 0;
 }
