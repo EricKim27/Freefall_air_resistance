@@ -9,10 +9,6 @@ void Object::log_height(float h)
 {
     height_log.push_back(height);
 }
-float Object::get_data()
-{
-    return height, velocity, weight;
-}
 float Object::get_time()
 {
     return time;
