@@ -13,3 +13,10 @@ Then you can use it with the following syntax:
 ```
 ./<your output filename> <height> <object's terminal velocity> <object's weight>
 ```
+
+You can use the output file(in a csv format) to make an animation with the code inside the Animation folder by:
+
+```
+python Animaton\animate.py
+Input csv file: <your csv file name>
+```
