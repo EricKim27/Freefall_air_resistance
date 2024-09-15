@@ -8,7 +8,7 @@ class Animation:
         self.fig, self.ax = plt.subplots()
         self.coord = coo
 
-    def DrawCircle(self, x, y, rad):
+    def _DrawCircle(self, x, y, rad):
         self.ax.set_xlim(x-rad-1, x+rad+1)
         self.ax.set_ylim(y-rad-1, y+rad+1)
         self.ax.set_aspect('equal')
@@ -16,20 +16,20 @@ class Animation:
         self.ax.add_patch(circle)
         return circle
 
-    def ClearFrame(self):
+    def _ClearFrame(self):
         for patch in self.ax.patches:
             patch.remove()
 
-    def do_animate(self, frame):
-        self.ClearFrame()
+    def _do_animate(self, frame):
+        self._ClearFrame()
         x, y = coord[frame % len(coord)]
-        self.DrawCircle(x, y, 0.05)
+        self._DrawCircle(x, y, 0.05)
         self.ax.set_xlim(-10, 10)
         self.ax.set_ylim(0, coord[0][1])
 
         return self.ax.patches
     def animate(self):
-        animation = FuncAnimation(self.fig, self.do_animate, frames=len(coord), repeat=False, interval=1, blit=True)
+        animation = FuncAnimation(self.fig, self._do_animate, frames=len(coord), repeat=False, interval=1, blit=True)
         plt.show()
 
 fname = input("Input csv file: ")
