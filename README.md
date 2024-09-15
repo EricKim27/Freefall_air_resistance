@@ -6,17 +6,17 @@ It takes in height of the falling object, its terminal velocity, and its weight.
 
 To use it, make a build directory, and type in this command:
 ```
-cmake <path to this code>
-make
+ $ cmake <path to this code>
+ $ make
 ```
 Then you can use it with the following syntax:
 ```
-./<your output filename> <height> <object's terminal velocity> <object's weight>
+ $ ./<your output filename> <height> <object's terminal velocity> <object's weight>
 ```
 
 You can use the output file(in a csv format) to make an animation with the code inside the Animation folder by:
 
 ```
-python Animaton\animate.py
-Input csv file: <your csv file name>
+ $ python Animaton\animate.py
+ $ Input csv file: <your csv file name>
 ```
